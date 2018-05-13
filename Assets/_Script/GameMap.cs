@@ -153,7 +153,7 @@ public class GameMap : MonoBehaviour {
 	}
 
 	public void searchRoom(){
-		string msg = "Nothing Special!";
+		string msgContent = "Nothing Special!";
 		if(states == 0){
 			List<string> pClue = currentchara.currentPlace.clues;
 			List<string> pool = new List<string>();
@@ -172,14 +172,14 @@ public class GameMap : MonoBehaviour {
 				if (pool.Count != 0){
 					int index = Random.Range(0,pool.Count-1);
 					currentchara.clueState[pool[index]] = 1;
-					msg = "Found clue: " + allClue.clueData[pool[index]].content;
+					msgContent = "Found clue: " + allClue.clueData[pool[index]].content;
 					if (allClue.clueData[pool[index]].isOneTime == 1){
 						currentchara.currentPlace.clues.Remove(pool[index]);
 					}
 				}
 			}
 		states = 2;
-		showNarritive(msg);
+		showNarritive(msgContent);
 		}
 
 
@@ -194,7 +194,7 @@ public class GameMap : MonoBehaviour {
 
 
 	public void ask(Character chara){
-		string msg = chara.cInfo.charaType + " does not seem know anything important";
+		string msgContent = chara.cInfo.charaType + " does not seem know anything important";
 		if (states == 0 && currentchara.cInfo.charaType != chara.cInfo.charaType){
 			if(chara.currentPlace != currentchara.currentPlace){
 				movePlayer(chara);
@@ -219,14 +219,14 @@ public class GameMap : MonoBehaviour {
 				if (cPool.Count != 0){
 					int index = Random.Range(0,cPool.Count-1);
 					currentchara.clueState[cPool[index]] = 1;
-					msg = "Found clue: " + allClue.clueData[cPool[index]].content;
+					msgContent = "Found clue: " + allClue.clueData[cPool[index]].content;
 				}
 			}
 			else{
-				msg = chara.cInfo.charaType + " refuse to tell you anything.";
+				msgContent = chara.cInfo.charaType + " refuse to tell you anything.";
 			}
 			states = 2;
-			showNarritive(msg);
+			showNarritive(msgContent);
 		}
 		
 	}
@@ -280,6 +280,15 @@ public class GameMap : MonoBehaviour {
 				}
 			}
 			notesContent.text = notes;
+		}
+	}
+
+	public void characterInfo(){
+		if(states == 0){
+			showPanel(notesPanel);
+			string info = currentchara.cInfo.Descrption;
+			notesContent.text = info;
+			
 		}
 	}
 
