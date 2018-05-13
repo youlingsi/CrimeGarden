@@ -18,6 +18,9 @@ public class GameMap : MonoBehaviour {
 	public GameObject frame;
 	public msgBox msg;
 	public GameObject selectionPanel;
+	public GameObject notesPanel;
+	public UnityEngine.UI.Text notesContent;
+	public string murder;
 
 	// Use this for initialization
 	void Start () {
@@ -44,6 +47,7 @@ public class GameMap : MonoBehaviour {
 			"rmSon",
 			"rmWife"
 			};
+		murder = "Assistant"; //randomly generate later.
 		allRoom = new Dictionary<string, Place>();
 		for(int i = 0; i < roomList.Count;i++){
 			plcs[i].roomName = roomList[i];
@@ -225,17 +229,56 @@ public class GameMap : MonoBehaviour {
 		
 	}
 
-	public void showPanel(){
-		selectionPanel.SetActive(true);
-		states = 3;
+	public void showPanel(GameObject obj){
+		if(states == 0){
+			obj.SetActive(true);
+			states = 3;
+		}
 	}
 
-	public void closePanel(){
-		selectionPanel.SetActive(false);
+	public void closePanel(GameObject obj){
+		obj.SetActive(false);
 		states = 0;
 	}
 	public void accuse(Character chara){
+		string kClue = chara.cInfo.keyClue;
+		closePanel(selectionPanel);
+		if(currentchara.cInfo.charaType != chara.cInfo.charaType){
+			if(currentchara.clueState[kClue] == 1){
+				if(chara.cInfo.charaType == murder){
+					states = -1;
+					showNarritive("You found the murder! \n\n Game Ended.");
+				}
+				else{
+					states = -1;
+					showNarritive(chara.cInfo.charaType + "was arrested, but the real murder is still free from punishment.\n\n Game End!");
+				}
+			}
+			else{
+				states = 2;
+				showNarritive("The evidences are not enough.");
+			}
+		}
+		else{
+			if(chara.cInfo.charaType == murder){
+				states = -1;
+				showNarritive("You confessed your crime. \n\n Game Ended.");
+			}
+		}
+	}
 
+	public void clueNotes(){
+		if(states == 0){
+			showPanel(notesPanel);
+			string notes = "";
+			foreach(KeyValuePair<string, int> c in currentchara.clueState){
+				if (c.Value == 1){
+					string txt = "clue"+ c.Key + ": " + allClue.clueData[c.Key].content + "\n\n";
+					notes += txt;
+				}
+			}
+			notesContent.text = notes;
+		}
 	}
 
 }
