@@ -103,21 +103,23 @@ public class GameMap : MonoBehaviour {
 	}
 
 	void showDialog(Character chara, string content){
+		string suffix = "....(Press Space...)";
 		UnityEngine.UI.Image img = chara.GetComponent<UnityEngine.UI.Image>();
 		msg.gameObject.SetActive(true);
 		msg.dialText.gameObject.SetActive(true);
 		msg.narraText.gameObject.SetActive(false);
 		msg.charaIcon.gameObject.SetActive(true);
 		msg.charaIcon.sprite = img.sprite;
-		msg.dialText.text = content;
+		msg.dialText.text = content + suffix;
 	}
 
 	void showNarritive(string content){
+		string suffix = "....(Press Space...)";
 		msg.gameObject.SetActive(true);
 		msg.dialText.gameObject.SetActive(false);
 		msg.charaIcon.gameObject.SetActive(false);
 		msg.narraText.gameObject.SetActive(true);
-		msg.narraText.text = content;
+		msg.narraText.text = content + suffix;
 	}
 
 	void disableMsg(){
