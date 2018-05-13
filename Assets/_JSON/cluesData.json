@@ -1,0 +1,293 @@
+{
+    "allClues":[
+        {
+            "code":"06",
+            "content":"An accounting book with several pages ripped off.",
+            "prereq":[],
+            "initialOwner":["rmLibrary"],
+            "states":[-2,0,0,0,0,0],
+            "isOneTime":0,
+            "scene":[]
+        },
+        {
+            "code":"07",
+            "content":"The assistent is untrustful.",
+            "prereq":[],
+            "initialOwner":["chSon"],
+            "states":[-2,0,0,0,1,0],
+            "isOneTime":0,
+            "scene":[]
+        },
+        {
+            "code":"08",
+            "content":"A receipt from the Rome Casino for $10,000 is on the desk",
+            "prereq":[],
+            "initialOwner":["rmSon"],
+            "states":[-2,0,0,0,-2,0],
+            "isOneTime":1,
+            "scene":[]
+        },
+        {
+            "code":"09",
+            "content":"The lord's son is very lazy and gambles all the time",
+            "prereq":[],
+            "initialOwner":["chAssistant"],
+            "states":[1,0,0,0,-2,0],
+            "isOneTime":0,
+            "scene":[]
+        },
+        {
+            "code":"10",
+            "content":"The son says he never gambles.",
+            "prereq":["09+08"],
+            "initialOwner":["chSon"],
+            "states":[-2,-1,-1,-1,1,-1],
+            "isOneTime":0,
+            "scene":[]
+        },
+        {
+            "code":"11",
+            "content":"The ripped pages from the accounting book. Some of the numbers looks weird",
+            "prereq":["06","10"],
+            "initialOwner":["rmAssistant"],
+            "states":[-2,-1,-1,-1,-1,-1],
+            "isOneTime":1,
+            "scene":[]
+        },
+        {
+            "code":"12",
+            "content":"The assistant confest that he's been stealing from the Lord's bank account.",
+            "prereq":["11"],
+            "initialOwner":["chAssistant"],
+            "states":[1,-1,-1,-1,-1,-1],
+            "isOneTime":0,
+            "scene":[]
+        },
+        {
+            "code":"13",
+            "content":"The dagger that killed the lord is in his suitcase",
+            "prereq":["12"],
+            "initialOwner":["chAssistant"],
+            "states":[1,-1,-1,-1,-1,-1],
+            "isOneTime":1,
+            "scene":[]
+        },
+        {
+            "code":"16",
+            "content":"The lord likes to manipulate people and he enjoyed it",
+            "prereq":[],
+            "initialOwner":["chSon","chWife","chButler","chAssistant","chFriend"],
+            "states":[1,1,1,0,1,1],
+            "isOneTime":0,
+            "scene":[]
+        },
+        {
+            "code":"17",
+            "content":"The wife has a lover.",
+            "prereq":[],
+            "initialOwner":["chMaid"],
+            "states":[0,0,0,1,0,-2],
+            "isOneTime":0,
+            "scene":[]
+        },
+        {
+            "code":"18",
+            "content":"The butler said the wife does not love the lord",
+            "prereq":[],
+            "initialOwner":["chButler","chSon"],
+            "states":[0,1,0,0,1,-2],
+            "isOneTime":0,
+            "scene":[]
+        },
+        {
+            "code":"19",
+            "content":"In the dining room, there is a piece of paper asking for an meeting at mid-night, half burnt",
+            "prereq":[],
+            "initialOwner":["rmDin"],
+            "states":[0,0,0,-2,0,-2],
+            "isOneTime":1,
+            "scene":[]
+        },
+        {
+            "code":"20",
+            "content":"A love letter from someone lay under the bed.",
+            "prereq":["19","17","18"],
+            "initialOwner":["rmWife"],
+            "states":[-1,-1,-1,-2,-1,-2],
+            "isOneTime":1,
+            "scene":[]
+        },
+        {
+            "code":"21",
+            "content":"The wife drugged the lord to meet the son.",
+            "prereq":["20","24"],
+            "initialOwner":["chWife"],
+            "states":[-1,-1,-1,-2,-1,1],
+            "isOneTime":0,
+            "scene":[]
+        },
+        {
+            "code":"22",
+            "content":"The door to the garden is locked at night",
+            "prereq":["22"],
+            "initialOwner":["chWife"],
+            "states":[-1,-1,-1,-2,-1,1],
+            "isOneTime":0,
+            "scene":[]
+        },
+        {
+            "code":"23",
+            "content":"There is a bottle of sleeping pill in the lord's room",
+            "prereq":[],
+            "initialOwner":["rmLibrary"],
+            "states":[0,0,0,0,0,-2],
+            "isOneTime":1,
+            "scene":[]
+        },
+        {
+            "code":"24",
+            "content":"The lord's wife often takes sleeping pills",
+            "prereq":["23"],
+            "initialOwner":["chWife","chButler","chMaid"],
+            "states":[-1,1,-1,1,-1,1],
+            "isOneTime":0,
+            "scene":[]
+        },
+        {
+            "code":"27",
+            "content":"The maid said, she saw someone was around the garden area at the night",
+            "prereq":[],
+            "initialOwner":["chMaid"],
+            "states":[0,0,0,1,0,0],
+            "isOneTime":0,
+            "scene":[]
+        },
+        {
+            "code":"28",
+            "content":"A hankerchief with the friends name is in the garden",
+            "prereq":["33","32"],
+            "initialOwner":["rmGarden"],
+            "states":[-1,-1,-2,-1,-1,-1],
+            "isOneTime":1,
+            "scene":[]
+        },
+        {
+            "code":"29",
+            "content":"There is a hidden door around the pond, does not know where it leads to",
+            "prereq":[],
+            "initialOwner":["rmGarden"],
+            "states":[0,0,1,0,0,0],
+            "isOneTime":0,
+            "scene":[]
+        },
+        {
+            "code":"30",
+            "content":"I used the pass way to enter the lord's room at the night, but I did not kill him.",
+            "prereq":["34"],
+            "initialOwner":["chFriend"],
+            "states":[-1,-1,1,-1,-1,-1],
+            "isOneTime":0,
+            "scene":[]
+        },
+        {
+            "code":"31",
+            "content":"A photo of family in the garden. One of them is the friend",
+            "prereq":[],
+            "initialOwner":["rmFriend"],
+            "states":[0,0,-2,0,0,0],
+            "isOneTime":0,
+            "scene":[]
+        },
+        {
+            "code":"32",
+            "content":"The lord used some way to take the property from his friend",
+            "prereq":["32"],
+            "initialOwner":["chFriend"],
+            "states":[-1,-1,1,-1,-1,-1],
+            "isOneTime":0,
+            "scene":[]
+        },
+        {
+            "code":"33",
+            "content":"The hidden passway connents the library and the garden",
+            "prereq":["27","29"],
+            "initialOwner":["chFriend"],
+            "states":[-1,-1,1,-1,-1,-1],
+            "isOneTime":0,
+            "scene":[]
+        },
+        {
+            "code":"34",
+            "content":"The passway was blocked at the end.",
+            "prereq":["28"],
+            "initialOwner":["rmGarden","chFriend"],
+            "states":[-1,-1,1,-1,-1,-1],
+            "isOneTime":0,
+            "scene":[]
+        },
+        {
+            "code":"35",
+            "content":"A dagger was sunk in the pond.",
+            "prereq":[],
+            "initialOwner":["rmGarden"],
+            "states":[0,0,0,-2,0,0],
+            "isOneTime":1,
+            "scene":[]
+        },
+        {
+            "code":"36",
+            "content":"An ID with the picture of the maid, but under a differentn name",
+            "prereq":["35","39"],
+            "initialOwner":["rmMaid"],
+            "states":[-1,-1,-1,-2,-1,-1],
+            "isOneTime":0,
+            "scene":[]
+        },
+        {
+            "code":"37",
+            "content":"The maid confessed that she is an assassin. The lord hired her to kill his wife",
+            "prereq":["22","36"],
+            "initialOwner":["chMaid"],
+            "states":[-1,-1,-1,1,-1,-1],
+            "isOneTime":0,
+            "scene":[]
+        },
+
+        {
+            "code":"39",
+            "content":"The door between the main area and the outer place is generally locked at night",
+            "prereq":[],
+            "initialOwner":["chSon","chButler","chWife"],
+            "states":[0,1,0,0,1,1],
+            "isOneTime":0,
+            "scene":[]
+        },
+        {
+            "code":"40",
+            "content":"The butler sometimes curse the lord secretly.",
+            "prereq":[],
+            "initialOwner":["chMaid"],
+            "states":[0,-2,0,1,0,0],
+            "isOneTime":0,
+            "scene":[]
+        },
+        {
+            "code":"41",
+            "content":"The door between the main area and the outer place was remained unlocked at the night",
+            "prereq":[],
+            "initialOwner":["chAssistant"],
+            "states":[1,-2,0,0,0,0],
+            "isOneTime":0,
+            "scene":[]
+        },
+        {
+            "code":"42",
+            "content":"The butler confessed that he left the door open hoping for some outsider coming and kill the lord",
+            "prereq":["39","41"],
+            "initialOwner":["chButler"],
+            "states":[-1,1,-1,-1,1,-1],
+            "isOneTime":0,
+            "scene":[]
+        }
+    ]
+}

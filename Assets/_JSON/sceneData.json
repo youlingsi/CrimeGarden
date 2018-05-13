@@ -1,0 +1,23 @@
+{
+    "sceneList":[
+        {
+            "sceneCode":"sc01",
+            "sceneLabel":"Openning",
+            "scripts":[
+                "d+Wife+Ahhhhhhhhh!",
+                "n+A sharp screaming tears the peaceful dawn in Hamfield Mansion. Anna, the hostess, sits on the floor of the Library, trembling in horror. ",
+                "n+Her husband, Lord Burnett, is lying on his desk, with a bloody wound on his back.",
+                "n+Having heard the screaming. Sebastian, the Butler entered the room.",
+                "d+Butler+What’s going on? My lady?",
+                "n+The wife said nothing but pointing to the direction of the lord.",
+                "n+Apparently, the lord is dead. He was stabbed at the back. According to Harris, who is a doctor and a friend of the family, The murder happened around the mid night. ",
+                "d+Assistant+Has the police been informed?",
+                "d+Maid+Yes, I called them. But They said they cannot come until tomorrow morning. Because, as we all know it is a very isolated place.",
+                "d+Friend+And they insist that none of us should leave until being properly interrogated.", 
+                "d+Son+So we gonna stick with this dead body for a whole day? Fun.",
+                "d+Assistant+I have a duty in town this afternoon.",
+                "d+Butler+I am afraid, we have no choice but to follow the instructions. Mary and I will make sure you are comfortable and well served."
+            ]
+        }
+    ]
+}

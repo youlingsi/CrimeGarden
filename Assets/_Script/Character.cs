@@ -1,21 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 
 public class Character : MonoBehaviour {
     public TextAsset data;
-    private CharaInfo cInfo;
-  
+    public CharaInfo cInfo;
+    public Place currentPlace;
+    public Dictionary<string,int> clueState;
 
-    void Start()
+    public void loadCharacter()
     {
+        clueState = new Dictionary<string,int>();
         cInfo = JsonUtility.FromJson<CharaInfo>(data.text);
-        print(cInfo.charaName);
-        print(cInfo.Descrption);
     }
-
-
 
 }
 
@@ -30,5 +28,6 @@ public class CharaInfo
     public int Observation;
     public string Skill1;
     public string Skill2;
+    public string keyClue;
     public string Descrption;
 }
